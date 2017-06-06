@@ -8,7 +8,7 @@ public class BackgroundController : MonoBehaviour {
 	//背景終了位置
 	private float deadLine = -16;
 	//背景開始位置
-	private float startLine = 15.8f;
+	private float startLine = 15.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +17,7 @@ public class BackgroundController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//背景を移動する
+		//背景をスクロールさせる制御
 		transform.Translate(this.scrollSpeed,0,0);
 
 		//画面外に出たら背景を移動する

@@ -54,7 +54,12 @@ public class CubeGenerator : MonoBehaviour {
 			//次のCubeまでの生成時間を決める
 			this.span = this.offsetX + this.spaceX * n;
 		}
-		Debug.Log (this.span);
+			
+	}
 
+	void OnCollisionEnter2D(Collision2D coll){
+		if (coll.gameObject.tag == "CubeTag") {
+			Debug.Log ("PL");
+		}
 	}
 }

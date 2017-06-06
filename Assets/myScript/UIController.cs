@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour {
 
@@ -27,17 +29,27 @@ public class UIController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-//		if (this.isGameOver == false) {
-//			//走った距離を更新する
-//			this.len += this.speed;
-//
-//			//走った距離を表示する
-//			this.runLengthText.GetComponent<Text>().text = "Distance:  " + len.ToString("F2") + "m";
-//		}
+		if (this.isGameOver == false) {
+			//走った距離を更新する
+			this.len += this.speed;
+
+			//走った距離を表示する
+			this.runLengthText.GetComponent<Text>().text = "Distance:  " + len.ToString("F2") + "m";
+		}
+
+		//ゲームオーバーになった場合
+		if (isGameOver) {
+			//クリックされたらシーンをロードする
+			if (Input.GetMouseButtonDown (0)) {
+				//GameSceneを読み込む
+				SceneManager.LoadScene("GameScene");
+			}
+		}
 	}
 
-//	public void GameOver(){
-//		this.gameOverText.GetComponent<Text> ().text = "GameOver";
-//		this.isGameOver = true;
-//	}
+	public void GameOver(){
+		this.gameOverText.GetComponent<Text> ().text = "GameOver";
+		this.isGameOver = true;
+	}
+
 }
