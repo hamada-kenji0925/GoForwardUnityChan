@@ -24,4 +24,14 @@ public class CubeController : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
+	void OnCollisionEnter2D(Collision2D other){
+		//キューブ同士が接触した場合
+		if (other.gameObject.tag == "CubeTag") {
+			GetComponent<AudioSource> ().Play ();
+		}
+		//キューブと地面が接触した場合
+		if (other.gameObject.tag == "GroundTag") {
+			GetComponent<AudioSource> ().Play ();
+		}
+	}
 }

@@ -5,10 +5,10 @@ public class BackgroundController : MonoBehaviour {
 
 	//スクロール速度
 	private float scrollSpeed = -0.03f;
-	//背景終了位置
-	private float deadLine = -16;
-	//背景開始位置
-	private float startLine = 15.0f;
+	//背景終了位置(背景ズレが起こるため独自設定）
+	private float deadLine = -19;
+	//背景開始位置(背景ズレが起こるため独自設定）
+	private float startLine = 19.0f;
 
 	// Use this for initialization
 	void Start () {
